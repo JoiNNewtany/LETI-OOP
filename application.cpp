@@ -25,6 +25,7 @@ int Application::run()
 
         switch (command) {
         case '1':
+        {
             number a, b, c;
             std::cout << "Enter a, b and c for ax^2 + bx + c: ";
             if (std::cin >> a >> b >> c)
@@ -35,11 +36,14 @@ int Application::run()
                 std::cin.ignore(10000, '\n');
             }
             break;
+        }
         case '2':
+        {
             number roots[2];
             switch (poly.findRoots(roots)) {
             case 0:
-                std::cout << "No real roots exist for this polynomial";
+                std::cout << "Two complex roots exist:";
+                // TODO: OUTPUT AND ALSO FIX CALCULATIONS
                 break;
             case 1:
                 std::cout << "One real root exists: " << roots[0];
@@ -53,7 +57,9 @@ int Application::run()
             }
             std::cout << '\n';
             break;
+        }
         case '3':
+        {
             number arg;
             std::cout << "Enter a value for the argument x: ";
             if (std::cin >> arg)
@@ -64,6 +70,7 @@ int Application::run()
                 std::cin.ignore(10000, '\n');
             }
             break;
+        }
         case '4':
             std::cout << poly << '\n';
             break;

@@ -1,3 +1,5 @@
 #pragma once
 
-typedef double number;
+#include "complex.hpp"
+
+typedef Complex number;

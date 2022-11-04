@@ -12,23 +12,32 @@ Polynomial::Polynomial(number a, number b, number c)
 int Polynomial::findRoots(number (&result)[2])
 {
     // Find discriminant
-    number d = (b * b) - 4 * a * c;
+    number d = (b * b) - a * 4 * c;
 
     if (d > 0) {
         // Two real roots
 
-        result[0] = (-b + std::sqrt(d)) / (2 * a);
-        result[1] = (-b - std::sqrt(d)) / (2 * a);
+        result[0] = ((b * -1) + sqrt(d)) / (a * 2);
+        result[1] = ((b * -1) - sqrt(d)) / (a * 2);
 
         return 2;
     } else if (d == 0) {
         // One real root
 
-        result[0] = -(b / (2 * a));
+        result[0] = (b / (a * 2)) * -1;
 
         return 1;
     } else {
-        // No real roots
+        // Two complex roots TODO: FIX ALL OF THIS
+
+        double real = ((b * -1) / (a * 2)).get_re();
+        double imag = (sqrt(d * -1) / (a * 2)).get_re();
+
+        result[0].set_re(real);
+        result[0].set_im(imag);
+        result[1].set_re(real);
+        result[1].set_im(imag * -1);
+
         return 0;
     }
 }
