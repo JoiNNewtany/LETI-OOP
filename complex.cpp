@@ -35,7 +35,7 @@ Complex Complex::operator*(const double val)
 {
     Complex result;
     result.re = this->re * val;
-    result.im = this->re * val;
+    result.im = this->im * val;
     return result;
 }
 
@@ -43,15 +43,7 @@ Complex Complex::operator*(const Complex& c)
 {
     Complex result;
     result.re = this->re * c.re - this->im * c.im;
-    result.im = this->re * c.im + this->im * c.re;
-    return result;
-}
-
-Complex Complex::reciprocal(const Complex& c)
-{
-    Complex result;
-    result.set_re(c.get_re_c() / (pow(c.get_re_c(), 2) + pow(c.get_im_c(), 2)));
-    result.set_im(c.get_im_c() / (pow(c.get_re_c(), 2) + pow(c.get_im_c(), 2)));
+    result.im = this->im * c.re + this->re * c.im;
     return result;
 }
 
@@ -60,7 +52,10 @@ Complex Complex::operator/(const Complex& c)
     if (c.im == 0)
         return Complex(this->re / c.re);
 
-    return (*this) * reciprocal(c);
+    Complex result;
+    result.re = ((this->re * c.re) + (this->im * c.im)) / (c.re * c.re + c.im * c.im);
+    result.im = ((this->im * c.re) - (this->re * c.im)) / (c.re * c.re + c.im * c.im);
+    return result;
 }
 
 Complex Complex::operator+(const Complex& c)
@@ -79,15 +74,28 @@ Complex Complex::operator-(const Complex& c)
     return result;
 }
 
-Complex sqrt(Complex c)
+Complex pow(const Complex& c, double p)
 {
-    // Find complex roots using de Moivre's theorem
-    Complex result;
-    double r = sqrt(pow(c.get_re(), 2) + pow(c.get_im(), 2));
-    double t = std::atan2(c.get_im(), c.get_re());
-    result.set_re(r * std::cos(t));
-    result.set_im(std::sin(t));
-    return result;
+    double phi = std::atan(c.im / c.re);
+    double real = std::cos(phi * p);
+    double img = std::sin(phi * p);
+    double mod = std::pow(abs(c), p);
+
+    return Complex(mod * real, mod * img);
+}
+
+Complex nrt(const Complex& c, double p)
+{
+    return pow(c, 1.0 / p);
+}
+
+Complex sqrt(const Complex& c)
+{
+    return pow(c, 1.0 / 2);
+}
+
+double abs(const Complex &c) {
+    return sqrt(c.re * c.re + c.im * c.im);
 }
 
 std::istream& operator>>(std::istream& is, Complex& c)

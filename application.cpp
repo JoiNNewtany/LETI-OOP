@@ -7,7 +7,7 @@ void print_commands() {
               << "2 - Find roots\n"
               << "3 - Find polynomial value for specific argument\n"
               << "4 - Display polynomial in text form\n"
-              << "0 - Exit";
+              << "0 - Exit" << std::endl;
 }
 
 Application::Application() {}
@@ -17,10 +17,10 @@ int Application::run()
     char command = '1';
     Polynomial poly(0, 0, 0);
 
+    print_commands();
+
     while (true)
     {
-        print_commands();
-        std::cout << '\n';
         std::cin >> command;
 
         switch (command) {
@@ -29,7 +29,10 @@ int Application::run()
             number a, b, c;
             std::cout << "Enter a, b and c for ax^2 + bx + c: ";
             if (std::cin >> a >> b >> c)
+            {
                 poly = Polynomial(a, b, c);
+                std::cout << "Input accepted\n";
+            }
             else {
                 std::cout << "Incorrect input\n";
                 std::cin.clear();
@@ -42,8 +45,7 @@ int Application::run()
             number roots[2];
             switch (poly.findRoots(roots)) {
             case 0:
-                std::cout << "Two complex roots exist:";
-                // TODO: OUTPUT AND ALSO FIX CALCULATIONS
+                std::cout << "Two complex roots exist: " << roots[0] << "; " << roots[1];
                 break;
             case 1:
                 std::cout << "One real root exists: " << roots[0];

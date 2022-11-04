@@ -17,8 +17,6 @@ public:
     double get_im_c() const { return im; }
     void set_im(double i) { im = i; }
 
-    static Complex reciprocal(const Complex&);
-
     bool operator==(const Complex&);
     bool operator>(const Complex&);
     Complex operator*(const double);
@@ -27,7 +25,10 @@ public:
     Complex operator+(const Complex&);
     Complex operator-(const Complex&);
 
-    friend Complex sqrt(Complex);
+    friend Complex pow(const Complex&, double);
+    friend Complex nrt(const Complex&, double);
+    friend Complex sqrt(const Complex&);
+    friend double abs(const Complex &complex);
     friend std::istream& operator>>(std::istream&, Complex&);
     friend std::ostream& operator<<(std::ostream&, const Complex&);
 private:
