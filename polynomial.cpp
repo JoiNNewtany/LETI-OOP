@@ -11,6 +11,9 @@ Polynomial::Polynomial(number a, number b, number c)
 
 int Polynomial::findRoots(number (&result)[2])
 {
+    if (a == 0)
+        return -1;
+
     // Find discriminant
     number d = (b * b) - a * 4 * c;
 
@@ -28,7 +31,7 @@ int Polynomial::findRoots(number (&result)[2])
 
         return 1;
     } else {
-        // Two complex roots TODO: FIX ALL OF THIS
+        // Two complex roots
 
         double real = ((b * -1) / (a * 2)).get_re();
         double imag = (sqrt(d * -1) / (a * 2)).get_re();
