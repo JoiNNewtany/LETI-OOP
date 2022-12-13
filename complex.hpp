@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-//#include <cmath>
 
 class Complex
 {
@@ -19,6 +18,7 @@ public:
 
     bool operator==(const Complex&);
     bool operator>(const Complex&);
+    bool operator<(const Complex&);
     Complex operator*(const double);
     Complex operator*(const Complex&);
     Complex operator/(const Complex&);

@@ -44,6 +44,13 @@
          <property name="verticalSpacing">
           <number>6</number>
          </property>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Number part:</string>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
@@ -158,13 +165,6 @@
            </item>
           </layout>
          </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Number part:</string>
-           </property>
-          </widget>
-         </item>
          <item row="4" column="0">
           <widget class="QLabel" name="label_arg">
            <property name="text">
@@ -189,6 +189,34 @@
            </item>
            <item>
             <widget class="QDoubleSpinBox" name="doubleSpinBox_argi"/>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_mode">
+           <property name="text">
+            <string>Calc. mode:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QRadioButton" name="radio_real">
+             <property name="text">
+              <string>Real Numbers</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radio_complex">
+             <property name="text">
+              <string>Complex Numbers</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>

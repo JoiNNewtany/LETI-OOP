@@ -18,6 +18,9 @@ private slots:
     void on_calculateButton_clicked();
 
 private:
+    template <class T>
+    void calculate(T, T, T, T);
+
     Ui::MainWindow *ui;
 };
 

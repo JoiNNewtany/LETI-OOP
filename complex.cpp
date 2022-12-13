@@ -31,6 +31,11 @@ bool Complex::operator>(const Complex& c)
     return this->re > c.re;
 }
 
+bool Complex::operator<(const Complex& c)
+{
+    return this->re < c.re;
+}
+
 Complex Complex::operator*(const double val)
 {
     Complex result;
@@ -49,9 +54,6 @@ Complex Complex::operator*(const Complex& c)
 
 Complex Complex::operator/(const Complex& c)
 {
-    if (c.im == 0)
-        return Complex(this->re / c.re);
-
     Complex result;
     result.re = ((this->re * c.re) + (this->im * c.im)) / (c.re * c.re + c.im * c.im);
     result.im = ((this->im * c.re) - (this->re * c.im)) / (c.re * c.re + c.im * c.im);
@@ -76,10 +78,10 @@ Complex Complex::operator-(const Complex& c)
 
 Complex pow(const Complex& c, double p)
 {
-    double phi = std::atan(c.im / c.re);
+    double phi = std::atan2(c.im, c.re);
+    double mod = std::pow(abs(c), p);
     double real = std::cos(phi * p);
     double img = std::sin(phi * p);
-    double mod = std::pow(abs(c), p);
 
     return Complex(mod * real, mod * img);
 }

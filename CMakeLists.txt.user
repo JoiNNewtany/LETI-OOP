@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 9.0.0, 2022-11-30T00:39:26. -->
+<!-- Written by QtCreator 9.0.0, 2022-12-11T02:19:03. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -171,6 +171,7 @@
       <value type="bool" key="CMakeProjectManager.MakeStep.ClearSystemEnvironment">false</value>
       <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.UserEnvironmentChanges"/>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -187,6 +188,7 @@
       <value type="bool" key="CMakeProjectManager.MakeStep.ClearSystemEnvironment">false</value>
       <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.UserEnvironmentChanges"/>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -383,9 +385,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Practice3</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.Practice3</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">Practice3</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Practice4</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.Practice4</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">Practice4</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
